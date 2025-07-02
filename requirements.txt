@@ -3,3 +3,4 @@ uvicorn # ASGI server for serving FastAPI applications
 ollama # Ollama client for interacting with Ollama models
 python-dotenv # For loading environment variables from a .env file
 requests # For making HTTP requests
+pydantic # Data validation and settings management
