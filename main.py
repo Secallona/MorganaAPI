@@ -17,7 +17,7 @@ def generate(request: PromptRequest = Query(...)):
     print(f"Received prompt: {request.prompt}")
     try:
         response = ollama.chat(
-            model="deepseek-r1",
+            model="dolphin-mistral",
             messages=[{"role": "user", "content": request.prompt}]
         )
         return {"response": response["message"]["content"]}
