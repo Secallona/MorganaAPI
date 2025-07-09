@@ -16,7 +16,7 @@ class PromptRequest(BaseModel):
     prompt: str
 
 
-with open('system_prompt2.txt', 'r', encoding='utf-8') as file:
+with open('system_prompt.txt', 'r', encoding='utf-8') as file:
     system_prompt = file.read()
 
 print(f"System prompt loaded: {system_prompt[:50]}...")  # Print first 50 characters for verification
