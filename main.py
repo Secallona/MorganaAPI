@@ -5,6 +5,8 @@ from fastapi.params import Query
 from pydantic import BaseModel
 import ollama
 from fastapi.middleware.cors import CORSMiddleware
+from together import Together
+
 
 # To serve locally for emulated devices run: uvicorn main: app --reload
 # To serve within all the network interfaces available run: uvicorn main:app --reload --host 0.0.0.0 --port 8000
@@ -23,6 +25,7 @@ app.add_middleware(
 class PromptRequest(BaseModel):
     prompt: str
 
+client = Together()
 
 with open('system_prompt.txt', 'r', encoding='utf-8') as file:
     system_prompt = file.read()
@@ -41,7 +44,7 @@ def generate(request: PromptRequest = Query(...)):
     print("Generating response...")
     try:
 
-        response = ollama.chat(
+        response = client.chat.completions.create(
             model="llama3:latest",
             messages=[
                 {"role": "system", "content": system_prompt},
@@ -49,7 +52,7 @@ def generate(request: PromptRequest = Query(...)):
         )
         print("Response generated successfully.")
         return {"response": response["message"]["content"]}
-
+        # return {"response": response.choices[0].message.content}
     except Exception as e:
         return {"error": str(e)}
 

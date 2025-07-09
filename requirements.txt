@@ -1,11 +1,12 @@
-fastapi # FastAPI framework for building APIs
+fastapi~=0.115.14
 uvicorn # ASGI server for serving FastAPI applications
-ollama # Ollama client for interacting with Ollama models
+ollama~=0.5.1
 python-dotenv # For loading environment variables from a .env file
 requests # For making HTTP requests
-pydantic # Data validation and settings management
+pydantic~=2.11.7
 langchain # For building applications with language models
 faiss-cpu # FAISS for efficient similarity search
 pypdf # For PDF file handling
 unstructured # For unstructured data processing
 tiktoken # Tokenization library for OpenAI models
+together~=1.5.19 # Together AI API client
