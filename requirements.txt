@@ -9,3 +9,4 @@ faiss-cpu # FAISS for efficient similarity search
 pypdf # For PDF file handling
 unstructured # For unstructured data processing
 tiktoken # Tokenization library for OpenAI models
+openai # OpenAI API client for interacting with OpenAI models
