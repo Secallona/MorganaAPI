@@ -39,8 +39,8 @@ Una API desarrollada con FastAPI que alimenta una aplicación móvil de tarot vi
 ### 1. Clonar el repositorio
 
 ```bash
-git clone <repository-url>
-cd tarotista-virtual-api
+git clone https://github.com/Secallona/MorganaAPI.git
+cd MorganaAPI
 ```
 
 ### 2. Crear entorno virtual
